@@ -15,7 +15,7 @@ public class TA06_05 {
 	private static int calcularDigitos(int num) {
 		int digitos = 0;
 		while(true) {
-			if(num / 2 == 0) {
+			if(num / 2 == 0) {		//si no quedan mas digitos
 				if(num % 2 == 0) {
 					return digitos;
 				} else {
@@ -32,7 +32,7 @@ public class TA06_05 {
 	private static String conversionBinario(int num, int digitos) {
 		String binario = "";
 		for(int i = digitos-1; i >= 0; i--) {
-			if((num & (int)Math.pow(2, i)) == 0) {
+			if((num & (int)Math.pow(2, i)) == 0) {		//Si num AND 2^n == 0  num es 0 en posicion n
 				binario = binario + '0';
 			} else {
 				binario = binario + '1';

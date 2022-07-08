@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TA06_8 {
+public class TA06_08 {
 
 	public static void main(String[] args) {
 		int[] nums = new int[10];
