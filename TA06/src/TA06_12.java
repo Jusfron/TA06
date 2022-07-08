@@ -36,7 +36,7 @@ public class TA06_12 {
 	}
 	
 	private static void mostrarValores(int[] nums, int digito) {
-		System.out.println("Mostrando todos los numeros del array que acaben en el digito introducido: ");
+		System.out.println("Mostrando todos los numeros del array que acaben en "+digito+" :");
 		for(int i = 0; i < nums.length; i++) {
 			if(sacarUltDigito(nums[i]) == digito) {
 				System.out.println("Indice: "+i+" Numero: "+nums[i]);
