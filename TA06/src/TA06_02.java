@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class TA06_2 {
+public class TA06_02 {
 
 	public static void main(String[] args) {
 		int numAleatorios, rangoInicial, rangoFinal;

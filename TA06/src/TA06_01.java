@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class TA06_1 {
+public class TA06_01 {
 
 	public static void main(String[] args) {
 		String figura;

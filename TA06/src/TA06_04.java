@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class TA06_4 {
+public class TA06_04 {
 
 	public static void main(String[] args) {
 		int num;
