@@ -13,14 +13,10 @@ public class TA06_06 {
 	
 	private static int calcularDigitos(int num) {
 		int digitos = 0;
-		while(true) {
+		while(true) {				//Dividir por 10 hasta que no queden mas cifras
 			if(num / 10 == 0) {
-				if(num % 10 == 0) {
-					return digitos;
-				} else {
-					digitos++;
-					return digitos;
-				}
+				digitos++;
+				return digitos;
 			} else {
 				num /= 10;
 				digitos++;

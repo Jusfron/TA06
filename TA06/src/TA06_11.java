@@ -8,15 +8,18 @@ public class TA06_11 {
 		System.out.println("Introduce el tamaño del array");
 		tamArr1 = sc.nextInt();
 		sc.close();
+		
 		int[] array1 = new int[tamArr1];
-		int[] array2 = array1;				//array2 apunta a array1, o sea son el mismo array
-		rellenarValores(array2); 			//Se sobreescriben los valores de array1
+		rellenarValores(array1);
+		int[] array2 = array1.clone();		//usar .clone() para pasar por valor
+		rellenarValores(array2); 			
+		
 		int [] arrayNuevo = productoArrays(array1, array2);
 		System.out.println("Mostrando los valores de array1");
 		mostrarValores(array1);
 		System.out.println("Mostrando los valores de array2");
-		mostrarValores(array2);			//igual que array1
-		System.out.println("Mostrando los valores de arrayNuevo");
+		mostrarValores(array2);			
+		System.out.println("Mostrando los valores del array de multiplicación");
 		mostrarValores(arrayNuevo);
 	}
 	
@@ -28,6 +31,11 @@ public class TA06_11 {
 	
 	private static int[] productoArrays(int[] array1, int[] array2) {
 		int[] arrayProd;
+		arrayProd = new int[array1.length];	
+		for(int i = 0; i < array1.length; i++) 
+			arrayProd[i] = array1[i] * array2[i];
+		
+		/*Codigo para usar arrays de tamaño diferente, como ahora son iguales no hace falta
 		if(array1.length<array2.length) {
 			arrayProd = new int[array1.length];	//El array nuevo tiene el tamaño del mas pequeño
 			for(int i = 0; i < array1.length; i++) 
@@ -36,7 +44,7 @@ public class TA06_11 {
 			arrayProd = new int[array2.length];	//El array nuevo tiene el tamaño del mas pequeño
 			for(int i = 0; i < array2.length; i++) 
 				arrayProd[i] = array1[i] * array2[i];
-		}
+		}*/
 		return arrayProd;
 	}
 	
