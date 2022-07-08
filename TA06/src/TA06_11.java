@@ -1,9 +1,49 @@
+import java.util.Scanner;
 
 public class TA06_11 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int tamArr1;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce el tamaño del array");
+		tamArr1 = sc.nextInt();
+		sc.close();
+		int[] array1 = new int[tamArr1];
+		int[] array2 = array1;				//array2 apunta a array1, o sea son el mismo array
+		rellenarValores(array2); 			//Se sobreescriben los valores de array1
+		int [] arrayNuevo = productoArrays(array1, array2);
+		System.out.println("Mostrando los valores de array1");
+		mostrarValores(array1);
+		System.out.println("Mostrando los valores de array2");
+		mostrarValores(array2);			//igual que array1
+		System.out.println("Mostrando los valores de arrayNuevo");
+		mostrarValores(arrayNuevo);
+	}
+	
+	private static void rellenarValores(int[] nums) {
+		for (int i = 0; i < nums.length; i++) {
+			nums[i] = (int)(Math.random()*100);	//generar numero aleatorio de 0 a 99
+		}
+	}
+	
+	private static int[] productoArrays(int[] array1, int[] array2) {
+		int[] arrayProd;
+		if(array1.length<array2.length) {
+			arrayProd = new int[array1.length];	//El array nuevo tiene el tamaño del mas pequeño
+			for(int i = 0; i < array1.length; i++) 
+				arrayProd[i] = array1[i] * array2[i];
+		} else {
+			arrayProd = new int[array2.length];	//El array nuevo tiene el tamaño del mas pequeño
+			for(int i = 0; i < array2.length; i++) 
+				arrayProd[i] = array1[i] * array2[i];
+		}
+		return arrayProd;
+	}
+	
+	private static void mostrarValores(int[] nums) {
+		for(int i = 0; i < nums.length; i++) {
+			System.out.println("Indice: "+i+" Numero: "+nums[i]);
+		}
 	}
 
 }
